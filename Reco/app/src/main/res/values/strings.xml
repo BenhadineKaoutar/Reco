@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Reco</string>
+    <string name="hello">HELLO!</string>
+    <string name="welcome_1">HELLO, I am Reco and welcome\n to our review community\n of cosmetic products </string>
+    <string name="welcome_2">We can help you to  :
+        \n- Get ingredient details of your products by scanning its bottles
+        \n- Analyse if a product feet your skin type
+        \n- Propose you products that may interest you
+        \n_ Free access to our review community</string>
+    <string name="welcome_3">Don\'t forget to share about your reviews of product to get our community bigger !!</string>
+    <string name="get_started">Get started</string>
+    <string name="title_activity_intro">IntroActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+
+</resources>
