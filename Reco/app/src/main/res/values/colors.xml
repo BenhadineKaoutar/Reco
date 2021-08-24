@@ -10,19 +10,21 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple_clear">#9791FF</color>
     <color name="purple_dark">#6C63FF</color>
+    <color name="purple">#8E97FD</color>
     <color name="red">#FF6363</color>
     <color name="orange">#F36A3E</color>
-    <color name="gray">#FF7D7C9C</color>
+    <color name="gray">#A1A4B2</color>
+    <color name="dark">#2F2E41</color>
 
     <array name="array_dot_active">
-        <item>@color/red</item>
-        <item>@color/red</item>
-        <item>@color/red</item>
+        <item>@color/dark</item>
+        <item>@color/dark</item>
+        <item>@color/dark</item>
     </array>
 
     <array name="array_dot_inactive">
-        <item>@color/white</item>
-        <item>@color/white</item>
-        <item>@color/white</item>
+        <item>@color/gray</item>
+        <item>@color/gray</item>
+        <item>@color/gray</item>
     </array>
 </resources>

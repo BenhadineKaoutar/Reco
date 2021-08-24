@@ -9,12 +9,10 @@
         android:id="@+id/wave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
         android:background="@drawable/ic_wave_3"
-        android:scaleType="matrix"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,25 +22,26 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/reviews_management_reco"
+        app:layout_constraintBottom_toBottomOf="@+id/wave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/wave" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
         android:lineSpacingExtra="4dp"
         android:text="@string/welcome_3"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:layout_margin="50dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/reco"
         app:layout_constraintStart_toStartOf="@+id/reco"
-        app:layout_constraintTop_toBottomOf="@id/reco" />
+        app:layout_constraintTop_toTopOf="@+id/wave" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

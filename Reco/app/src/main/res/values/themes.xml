@@ -2,13 +2,28 @@
     <!-- Base application theme. -->
     <style name="Theme.Reco" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_clear</item>
-        <item name="colorPrimaryVariant">@color/purple_dark</item>
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryVariant">@color/dark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/orange</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="android:windowBackground">
+            @drawable/background_splash
+        </item>
+    </style>
+
+    <style name="IntroScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorOnPrimary">@color/white</item>
     </style>
 </resources>
