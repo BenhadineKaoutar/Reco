@@ -3,7 +3,6 @@ package com.cocoben.reco;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -22,9 +21,12 @@ import android.widget.TextView;
 public class IntroActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
+    private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
+    private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
+    private PrefManager prefManager;
     //  viewpager change listener
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
@@ -54,7 +56,6 @@ public class IntroActivity extends AppCompatActivity {
 
         }
     };
-    private PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,10 +75,10 @@ public class IntroActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_intro);
 
-        viewPager = findViewById(R.id.view_pager);
-        dotsLayout = findViewById(R.id.layoutDots);
-        btnSkip = findViewById(R.id.btn_skip);
-        btnNext = findViewById(R.id.btn_next);
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
+        btnSkip = (Button) findViewById(R.id.btn_skip);
+        btnNext = (Button) findViewById(R.id.btn_next);
 
 
         // layouts of all welcome sliders
@@ -93,7 +94,7 @@ public class IntroActivity extends AppCompatActivity {
         // making notification bar transparent
         changeStatusBarColor();
 
-        MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter();
+        myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
@@ -120,8 +121,18 @@ public class IntroActivity extends AppCompatActivity {
         });
     }
 
+    private int getItem(int i) {
+        return viewPager.getCurrentItem() + i;
+    }
+
+    private void launchHomeScreen() {
+        prefManager.setFirstTimeLaunch(false);
+        startActivity(new Intent(IntroActivity.this, MainActivity.class));
+        finish();
+    }
+
     private void addBottomDots(int currentPage) {
-        TextView[] dots = new TextView[layouts.length];
+        dots = new TextView[layouts.length];
 
         int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
         int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
@@ -137,16 +148,6 @@ public class IntroActivity extends AppCompatActivity {
 
         if (dots.length > 0)
             dots[currentPage].setTextColor(colorsActive[currentPage]);
-    }
-
-    private int getItem(int i) {
-        return viewPager.getCurrentItem() + i;
-    }
-
-    private void launchHomeScreen() {
-        prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(IntroActivity.this, MainActivity.class));
-        finish();
     }
 
     /**

@@ -14,17 +14,18 @@
     <color name="red">#FF6363</color>
     <color name="orange">#F36A3E</color>
     <color name="gray">#A1A4B2</color>
+    <color name="light_gray">#C4C4C4</color>
     <color name="dark">#2F2E41</color>
 
     <array name="array_dot_active">
-        <item>@color/dark</item>
-        <item>@color/dark</item>
-        <item>@color/dark</item>
+        <item>@color/purple</item>
+        <item>@color/purple</item>
+        <item>@color/purple</item>
     </array>
 
     <array name="array_dot_inactive">
-        <item>@color/gray</item>
-        <item>@color/gray</item>
-        <item>@color/gray</item>
+        <item>@color/light_gray</item>
+        <item>@color/light_gray</item>
+        <item>@color/light_gray</item>
     </array>
 </resources>

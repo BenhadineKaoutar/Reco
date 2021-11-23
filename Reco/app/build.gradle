@@ -20,10 +20,16 @@ android {
     //TODO: 1st step
     signingConfigs {
         config {
-            keyAlias 'cocoben'
-            keyPassword 'cocoben'
             storeFile file('keystore.jks')
             storePassword 'cocoben'
+            keyPassword 'cocoben'
+            keyAlias 'cocoben'
+        }
+        configs {
+            storeFile file('upload.jks')
+            storePassword 'cocoben'
+            keyPassword 'cocoben'
+            keyAlias 'cocoben'
         }
     }
 
@@ -32,7 +38,7 @@ android {
             signingConfig signingConfigs.config
         }
         release {
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.configs
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -52,4 +58,13 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
+    // Import the base SDK.
+    implementation 'com.huawei.hms:ml-computer-vision-ocr:2.0.5.301'
+    // Import the Latin-based language model package.
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-latin-model:2.0.5.301'
+    // Import the Japanese and Korean model package.
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-jk-model:2.0.5.301'
+    // Import the Chinese and English model package.
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-cn-model:2.0.5.301'
+
 }
